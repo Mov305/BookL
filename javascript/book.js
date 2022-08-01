@@ -28,17 +28,3 @@ const addUI = () => {
 addUI();
 
 /* eslint-disable */
-const removeUI = (id) => {
-  booksArray = booksArray.filter((ele, index) => index !== id);
-  addUI();
-};
-
-addBook.addEventListener('click', (e) => {
-  e.preventDefault();
-  const bookObj = {
-    title: bookTitle.value,
-    author: bookAuthor.value,
-  };
-  booksArray.push(bookObj);
-  addUI();
-});
