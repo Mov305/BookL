@@ -7,6 +7,7 @@ function updateLocalStorage(data) {
   localStorage.setItem('data', JSON.stringify(data));
 }
 
+let booksArray;
 /* eslint max-classes-per-file: ["error", 2] */
 class BooksArray extends Array {
   static get() {
@@ -14,7 +15,6 @@ class BooksArray extends Array {
   }
 
   removeBook(id) {
-    /* eslint-disable */
     booksArray = this.filter((ele, index) => index !== id);
   }
 }
@@ -30,7 +30,7 @@ class Book {
   }
 }
 
-let booksArray = new BooksArray(...(JSON.parse(localStorage.getItem('data')) || []));
+booksArray = new BooksArray(...(JSON.parse(localStorage.getItem('data')) || []));
 
 const addUI = () => {
   updateLocalStorage(booksArray);
@@ -51,7 +51,6 @@ addUI();
 /* eslint-disable */
 const removeUI = (id) => {
   booksArray.removeBook(id);
-  //  booksArray = booksArray.filter((ele, index) => index !== id);
   addUI();
 };
 
