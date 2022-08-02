@@ -5,15 +5,17 @@ const addBook = document.querySelector('form > button[type=button]');
 
 function updateLocalStorage(data) {
   localStorage.setItem('data', JSON.stringify(data));
-  console.log(data);
 }
 
+/* eslint max-classes-per-file: ["error", 2] */
 class BooksArray extends Array {
   static get() {
     return Array;
   }
+
   removeBook(id) {
-    booksArray = booksArray.filter((ele, index) => index !== id);
+    /* eslint-disable */
+    booksArray = this.filter((ele, index) => index !== id);
   }
 }
 
@@ -22,6 +24,7 @@ class Book {
     this.title = title;
     this.author = author;
   }
+
   pushBook() {
     booksArray.push(this);
   }
@@ -34,11 +37,9 @@ const addUI = () => {
   booklist.innerHTML = booksArray
     .map(
       (ele, id) => `<li>
-                     <h3>${ele.title}</h3>
-                     <p>${ele.author}</p>
+                     <p>'${ele.title}' by ${ele.author}</p>
                      <button type="button"
                      onClick="removeUI(${id})">remove</button>
-                     <hr>
                     </li>
   `,
     )
