@@ -13,7 +13,9 @@
  Welcome to Awesome Books! We introduce new search methodology applied with javascript and dynamic html. New work dynamic creating and merging secondary branches for a single pull request. 
 
 ## Author
- GitHub: @sntgopl @Mov305
+ GitHub:
+  [@sntgopl](https://github.com/sntgopl) 
+  [@Mov305](https://github.com/Mov305)
  Linkedin: Santiago Pons Lezica & Abdelrhman samy
 
 ## Contributing
