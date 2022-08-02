@@ -3,3 +3,14 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}

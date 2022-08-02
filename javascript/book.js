@@ -5,9 +5,29 @@ const addBook = document.querySelector('form > button[type=button]');
 
 function updateLocalStorage(data) {
   localStorage.setItem('data', JSON.stringify(data));
+  console.log(data);
 }
 
-let booksArray = JSON.parse(localStorage.getItem('data')) || [];
+class BooksArray extends Array {
+  static get() {
+    return Array;
+  }
+  removeBook(id) {
+    booksArray = booksArray.filter((ele, index) => index !== id);
+  }
+}
+
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+  pushBook() {
+    booksArray.push(this);
+  }
+}
+
+let booksArray = new BooksArray(...(JSON.parse(localStorage.getItem('data')) || []));
 
 const addUI = () => {
   updateLocalStorage(booksArray);
@@ -29,16 +49,14 @@ addUI();
 
 /* eslint-disable */
 const removeUI = (id) => {
-  booksArray = booksArray.filter((ele, index) => index !== id);
+  booksArray.removeBook(id);
+  //  booksArray = booksArray.filter((ele, index) => index !== id);
   addUI();
 };
 
 addBook.addEventListener('click', (e) => {
   e.preventDefault();
-  const bookObj = {
-    title: bookTitle.value,
-    author: bookAuthor.value,
-  };
-  booksArray.push(bookObj);
+  const bookObj = new Book(bookTitle.value, bookAuthor.value);
+  bookObj.pushBook();
   addUI();
 });
