@@ -11,3 +11,7 @@ navs.forEach((ele, index) => {
     sections[index].classList.remove('hidden');
   });
 });
+
+const date = document.querySelector('#date');
+
+date.innerHTML = Date();
