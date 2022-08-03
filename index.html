@@ -5,18 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Libr</title>
-    <style>
-      section {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <nav></nav>
@@ -25,11 +14,13 @@
         <h1>Awesome Books</h1>
         <ul id="listOfBooks"></ul>
         <form action="#">
+          <h2>Add a Book</h2>
+          <br>
           <input type="text" id="bookTitle" placeholder="Title" />
           <br />
           <input type="text" id="bookAuthor" placeholder="Author" />
           <br />
-          <button type="button">Add</button>
+          <button class="form-button" type="button">Add</button>
         </form>
       </section>
     </main>
