@@ -13,6 +13,7 @@ navs.forEach((ele, index) => {
   });
 });
 
+
 addButton.addEventListener('click', () => {
   sections.forEach((sec, i) => {
     sec.classList.add('hidden');
@@ -21,3 +22,8 @@ addButton.addEventListener('click', () => {
   sections[0].classList.remove('hidden');
   navs[0].classList.add('active');
 });
+
+const date = document.querySelector('#date');
+
+date.innerHTML = Date();
+
