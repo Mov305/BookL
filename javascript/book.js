@@ -1,7 +1,7 @@
 const booklist = document.querySelector('#listOfBooks');
 const bookTitle = document.querySelector('#bookTitle');
 const bookAuthor = document.querySelector('#bookAuthor');
-const addBook = document.querySelector('form > button[type=button]');
+const addBook = document.querySelector('#addButton');
 
 function updateLocalStorage(data) {
   localStorage.setItem('data', JSON.stringify(data));
@@ -59,4 +59,6 @@ addBook.addEventListener('click', (e) => {
   const bookObj = new Book(bookTitle.value, bookAuthor.value);
   bookObj.pushBook();
   addUI();
+  bookTitle.value = '';
+  bookAuthor.value = '';
 });
