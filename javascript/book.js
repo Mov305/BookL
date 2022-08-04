@@ -59,4 +59,6 @@ addBook.addEventListener('click', (e) => {
   const bookObj = new Book(bookTitle.value, bookAuthor.value);
   bookObj.pushBook();
   addUI();
+  bookTitle.value = '';
+  bookAuthor.value = '';
 });
