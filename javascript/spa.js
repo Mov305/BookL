@@ -1,5 +1,6 @@
 const navs = document.querySelectorAll('#navList > li');
 const sections = document.querySelectorAll('section');
+const addButton = document.querySelector('#addButton');
 
 navs.forEach((ele, index) => {
   ele.addEventListener('click', () => {
@@ -12,6 +13,17 @@ navs.forEach((ele, index) => {
   });
 });
 
+
+addButton.addEventListener('click', () => {
+  sections.forEach((sec, i) => {
+    sec.classList.add('hidden');
+    navs[i].classList.remove('active');
+  });
+  sections[0].classList.remove('hidden');
+  navs[0].classList.add('active');
+});
+
 const date = document.querySelector('#date');
 
 date.innerHTML = Date();
+
